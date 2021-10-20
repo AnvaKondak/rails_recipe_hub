@@ -1,34 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class = "container">
 
-<h1>Recipes</h1>
+<h1 class="display-4">
+My Recipes
+</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Recipe name</th>
-      <th>Ingredients</th>
-      <th>Instructions</th>
-      <th>Ispublic</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+<div class = "row">
+<% @recipes.each do |recipe| %>
+  <% if recipe.user == current_user %>
+  <section class="col-lg-3 col-md-6 py-3">
+<div class="jumbotron">
+<p class = "lead">
+<%= link_to recipe.recipe_name,  recipe %>
+</p> 
+<div>
+<%= link_to image_tag(recipe.image , style: 'max-height: 90%; max-width: 90%; object-fit: contain', loading: "lazy"), recipes_path %>
+</div>
+</div> 
+</section>
+<% end %>
+<% end %>
+</div>
 
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <% if recipe.user == current_user %>
-      <tr>
-        <td><%= recipe.recipe_name %></td>
-        <td><%= recipe.ingredients %></td>
-        <td><%= recipe.instructions %></td>
-        <td><%= recipe.isPublic %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
 
 <%= link_to 'New Recipe', new_recipe_path , class: 'btn btn-secondary'%>
+</div>
