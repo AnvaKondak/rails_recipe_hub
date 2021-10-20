@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Recipes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recipe name</th>
+      <th>Attachment</th>
+      <th>Ingredients</th>
+      <th>Instructions</th>
+      <th>Ispublic</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <% if recipe.isPublic == true %>
+      <tr>
+        <td><%= recipe.recipe_name %></td>
+        <td><%= recipe.attachment %></td>
+        <td><%= recipe.ingredients %></td>
+        <td><%= recipe.instructions %></td>
+        <td><%= recipe.isPublic %></td>
+        <td><%= link_to 'Show', recipe %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recipe', new_recipe_path %>
