@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Recipe name</th>
-      <th>Attachment</th>
       <th>Ingredients</th>
       <th>Instructions</th>
       <th>Ispublic</th>
@@ -19,7 +18,6 @@
       <% if recipe.user == current_user %>
       <tr>
         <td><%= recipe.recipe_name %></td>
-        <td><%= recipe.attachment %></td>
         <td><%= recipe.ingredients %></td>
         <td><%= recipe.instructions %></td>
         <td><%= recipe.isPublic %></td>

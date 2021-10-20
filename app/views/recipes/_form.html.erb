@@ -13,28 +13,28 @@
 
   <div class="field">
     <%= form.label :recipe_name %>
-    <%= form.text_field :recipe_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :attachment %>
-    <%= form.text_field :attachment %>
+    <%= form.text_field :recipe_name , required: true %>
   </div>
 
   <div class="field">
     <%= form.label :ingredients %>
-    <%= form.text_field :ingredients %>
+    <%= form.text_field :ingredients , required: true%>
   </div>
 
   <div class="field">
     <%= form.label :instructions %>
-    <%= form.text_area :instructions %>
+    <%= form.text_area :instructions , required: true%>
   </div>
 
   <div class="field">
     <%= form.label :isPublic %>
     <%= form.check_box :isPublic %>
   </div>
+  
+  <div class="field" >
+  <%= form.label :image %>
+  <%= form.file_field :image , required: true %>
+</div>
 
   <%= form.number_field :user_id, id: :recipe_user_id, type: :hidden, value: current_user.id %>
   <div class="actions">
