@@ -18,3 +18,6 @@
     margin-bottom: 2%;
     margin-top: 2%;
  }
+ .attachment:hover {
+    transform: scale(1.1);
+  }
