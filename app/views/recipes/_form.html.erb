@@ -11,33 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :recipe_name %>
-    <%= form.text_field :recipe_name , required: true %>
+  <div class="field form-group">
+    <%= form.text_field :recipe_name , required: true , class: "form-control", placeholder: "Recipe Name" %>
   </div>
 
-  <div class="field">
-    <%= form.label :ingredients %>
-    <%= form.text_field :ingredients , required: true%>
+  <div class="field form-group">
+    <%= form.text_field :ingredients , required: true , class: "form-control", placeholder: "Ingredients" %>
   </div>
 
-  <div class="field">
-    <%= form.label :instructions %>
-    <%= form.text_area :instructions , required: true%>
+  <div class="field form-group" >
+    <%= form.text_area :instructions , required: true, class: "form-control", placeholder: "Instructions" %>
   </div>
 
-  <div class="field">
-    <%= form.label :isPublic %>
+  <div class="field form-group">
+    <%= form.label 'Public recipe' %>
     <%= form.check_box :isPublic %>
   </div>
   
-  <div class="field" >
-  <%= form.label :image %>
-  <%= form.file_field :image , required: true %>
+  <div class="field form-group" >
+  <%= form.file_field :image , required: true ,  class: "form-control" %>
 </div>
 
   <%= form.number_field :user_id, id: :recipe_user_id, type: :hidden, value: current_user.id %>
   <div class="actions">
-    <%= form.submit %>
+
+    <%= form.submit  class: "btn btn-secondary"%>
   </div>
 <% end %>

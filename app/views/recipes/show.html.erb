@@ -1,31 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Recipe name:</strong>
+<div class = "container">
+<div class="jumbotron">
+<h1 class="display-4">
   <%= @recipe.recipe_name %>
-</p>
+</h1>
 
-<p>
+<p class = "lead">
   <strong>Ingredients:</strong>
   <%= @recipe.ingredients %>
 </p>
 
-<p>
+<p class = "lead">
   <strong>Instructions:</strong>
   <%= @recipe.instructions %>
 </p>
 
-<p>
+<p class = "lead">
   <strong>Ispublic:</strong>
   <%= @recipe.isPublic %>
 </p>
 
 <div>
-<%= link_to image_tag(@recipe.image , style: 'width: 100%'), recipes_path %>
+<%= link_to image_tag(@recipe.image , style: 'max-height: 90%; max-width: 90%; object-fit: contain'), recipes_path %>
 </div>
 
+</div>
+</div>
 
 <% if @recipe.user == current_user %>
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Edit', edit_recipe_path(@recipe) , class: 'btn btn-secondary', style: 'margin-bottom: 5%'%> 
 <% end %>
-<%= link_to 'Back', recipes_path %>
+<%= link_to 'Back', recipes_path , class: 'btn btn-dark', style: 'margin-bottom: 5%'%>
