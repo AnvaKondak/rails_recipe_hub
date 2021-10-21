@@ -18,6 +18,20 @@
     margin-bottom: 2%;
     margin-top: 2%;
  }
- .attachment:hover {
-    transform: scale(1.1);
-  }
+ .jumbo:hover {
+   transform: scale(1.04);
+   transition: transform 0.2s ease;
+ }
+
+  a, a:hover{
+  text-decoration: none!important;
+  color: #000;
+ }
+
+h3, h1, .specialfont{
+  font-family: 'Abril Fatface', cursive;
+}
+
+p, .lead {
+  font-family: 'Raleway', sans-serif;
+}

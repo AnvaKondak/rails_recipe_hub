@@ -7,16 +7,23 @@ My Recipes
 <div class = "row">
 <% @recipes.each do |recipe| %>
   <% if recipe.user == current_user %>
-  <section class="col-lg-3 col-md-6 py-3">
-<div class="jumbotron">
-<p class = "lead">
-<%= link_to recipe.recipe_name,  recipe %>
-</p> 
-<div>
-<%= link_to image_tag(recipe.image , class: 'attachment', style: 'max-height: 90%; max-width: 90%; object-fit: contain', loading: "lazy"), recipe %>
+
+  <section class="col-lg-4 col-md-6 py-3">
+  <div class = "jumbo"  >
+  <%= link_to recipe do %>
+<div class="jumbotron" style="background: #F5F2EA" >
+<h3 class = "card-title">
+<%= recipe.recipe_name %>
+</h3> 
+<hr class="my-4">
+<div> 
+<%= image_tag(recipe.image , style: 'height: 100%; width: 100%; object-fit: contain', loading: "lazy") %>
 </div>
 </div> 
+<% end %>
+</div>
 </section>
+
 <% end %>
 <% end %>
 </div>

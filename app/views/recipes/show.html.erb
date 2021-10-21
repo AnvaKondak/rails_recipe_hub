@@ -5,17 +5,21 @@
 </h1>
 
 <p class = "lead">
-  <strong>Ingredients:</strong>
+<span class = "specialfont">Ingredients:</span>
   <%= @recipe.ingredients %>
 </p>
 
 <p class = "lead">
-  <strong>Instructions:</strong>
+  <span class = "specialfont">Instructions:</span>
   <%= @recipe.instructions %>
 </p>
 
-<div>
-<%= link_to image_tag(@recipe.image , style: 'max-height: 90%; max-width: 90%; object-fit: contain'), recipes_path %>
+<div class = "row justify-content-center">
+<div class = "col-2"></div>
+<div class = "col-md-6">
+<%= link_to image_tag(@recipe.image , class: "col", style: 'height: 100%; width: 100%; object-fit: contain'), recipes_path %>
+</div>
+<div class = "col-2"></div>
 </div>
 
 </div>

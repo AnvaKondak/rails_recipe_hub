@@ -8,18 +8,23 @@ Shared Recipes
 <% @recipes.each do |recipe| %>
   
   <% if recipe.isPublic == true %>
-  <section class="col-lg-3 col-md-6 py-3">
 
+  <section class="col-lg-4 col-md-6 py-3">
+  <div class = "jumbo">
+  <%= link_to recipe do %>
 <div class="jumbotron" style="background: #F7EEF8">
-<p class = "lead">
-<%= link_to recipe.recipe_name,  recipe %>
-</p> 
+<h3 class = "card-title" >
+<%= recipe.recipe_name %>
+</h3> 
+<hr class="my-4">
 <div>
-<%= link_to image_tag(recipe.image , class: 'attachment', style: 'max-height: 90%; max-width: 90%; object-fit: contain', loading: "lazy") , recipe %>
+<%= image_tag(recipe.image , style: 'height: 100%; width: 100%; object-fit: contain', loading: "lazy") %>
 </div>
 </div> 
-
+<% end %>
+</div>
 </section>
+
 <% end %>
 <% end %>
 </div> 
