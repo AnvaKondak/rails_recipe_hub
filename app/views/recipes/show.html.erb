@@ -4,28 +4,48 @@
   <%= @recipe.recipe_name %>
 </h1>
 
-<p class = "lead">
-<span class = "specialfont">Ingredients:</span>
-  <%= @recipe.ingredients %>
-</p>
-
-<p class = "lead">
-  <span class = "specialfont">Instructions:</span>
-  <%= @recipe.instructions %>
-</p>
-
 <div class = "row justify-content-center">
-<div class = "col-2"></div>
-<div class = "col-md-6">
+
+<div class = "col-md-12">
 <%= link_to image_tag(@recipe.image , class: "col", style: 'height: 100%; width: 100%; object-fit: contain'), recipes_path %>
 </div>
-<div class = "col-2"></div>
+
 </div>
+<br>
+<div class="card">
+<h4 class = "lead card-header">
+<span class = "specialfont">Ingredients</span>
+</h4>
+<ul class="list-group">
+  <% @recipe.ingredients.split(',').each do |ingredient| %>
+    <li class = "list-group-item"><p class = "lead"><%= ingredient %></p></li>
+  <% end %>
+</ul>
+</div>
+
+
+<br>
+<div class="card">
+<h4 class = "lead card-header">
+  <span class = "specialfont">Instructions</span>
+</h4>
+<ul class="list-group">
+  <% @recipe.instructions.split('.').each do |instruction| %>
+    <li class = "list-group-item"><p class = "lead"><%= instruction %></p></li>
+  <% end %>
+</ul>
+</div>
+
+
 
 </div>
 </div>
 
+<div class="border border-light p-3 mb-4">
+<div class = "text-center">
 <% if @recipe.user == current_user %>
 <%= link_to 'Edit', edit_recipe_path(@recipe) , class: 'btn btn-secondary', style: 'margin-bottom: 5%'%> 
 <% end %>
 <%= link_to 'Back', recipes_path , class: 'btn btn-dark', style: 'margin-bottom: 5%'%>
+</div>
+</div>
